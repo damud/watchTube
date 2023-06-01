@@ -1,10 +1,11 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Sidebar from "./Sidebar";
 
-
 const Feed = () => {
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
+      {/* Categories sidebar */}
+
       <Box
         sx={{
           height: { sx: "auto", md: "92vh" },
@@ -21,6 +22,19 @@ const Feed = () => {
         >
           2022 - {new Date().getFullYear()} © WatchTibe Inc. All Rights
           Reserved.
+        </Typography>
+      </Box>
+
+      {/* Video Feed */}
+
+      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          mb={2}
+          sx={{ color: "white" }}
+        >
+          New <span style={{ color: "#F31503" }}>videos</span>
         </Typography>
       </Box>
     </Stack>
