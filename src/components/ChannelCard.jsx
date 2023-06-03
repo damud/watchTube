@@ -1,7 +1,36 @@
-import React from "react";
+import { Box, CardMedia, CardContent } from "@mui/material";
+import { Link } from "react-router-dom";
 
-const ChannelCard = () => {
-  return <div>Channel Card</div>;
-};
+import { demoProfilePicture } from "../utils/constants";
+
+const ChannelCard = ({ channelDetail }) => (
+  <Box sx={{ boxShadow: "none", borderRadius: "20px" }}>
+    <Link to={`/channel/${channelDetail?.id?.channelId}`}>
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          textAlign: "center",
+          color: "#fff",
+        }}
+      >
+        <CardMedia
+          image={
+            channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture
+          }
+          alt={channelDetail?.snippet?.title}
+          sx={{
+            borderRadius: "50%",
+            width: "180px",
+            height: "180px",
+            mb: 2,
+            border: "1px solid #e3e3e3",
+          }}
+        />
+      </CardContent>
+    </Link>
+  </Box>
+);
 
 export default ChannelCard;
