@@ -49,11 +49,15 @@ a {
   background: transparent;
   outline: none;
   border: none;
-
   padding: 7px 15px;
   margin: 10px 0px;
   border-radius: 20px;
   transition: all 0.3s ease;
+}
+
+.react-player {
+  height: 77vh !important;
+  width: 100% !important;
 }
 
 @media screen and (max-width: 900px) {
@@ -75,5 +79,9 @@ a {
 
   .search-bar {
     width: 200px;
+  }
+
+  .react-player {
+    height: 45vh !important;
   }
 }
