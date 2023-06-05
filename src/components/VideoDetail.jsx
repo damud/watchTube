@@ -6,7 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { CheckCircle } from "@mui/icons-material";
 
-import { Videos } from "./";
+import { Videos, Loader } from "./";
 
 const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null);
@@ -22,7 +22,7 @@ const VideoDetail = () => {
     );
   }, [id]);
 
-  if (!videoDetail?.snippet) return "Loading...";
+  if (!videoDetail?.snippet) return <Loader />;
   const {
     snippet: { title, channelId, channelTitle },
     statistics: { viewCount, likeCount },
